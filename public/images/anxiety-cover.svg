@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Абстрактные мягкие волны в прохладных тонах">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9e6e3"/>
+      <stop offset="1" stop-color="#b7cbc7"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0.28" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#f8f4ea" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#f8f4ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect width="800" height="800" fill="url(#light)"/>
+  <path d="M-80 552C100 410 215 464 353 564s267 112 527-75v311H-80Z" fill="#789d96" opacity=".44"/>
+  <path d="M-70 635c169-129 296-99 420 2s270 92 520-67v230H-70Z" fill="#eff0e9" opacity=".7"/>
+  <circle cx="575" cy="248" r="116" fill="#f7efe0" opacity=".35"/>
+</svg>
