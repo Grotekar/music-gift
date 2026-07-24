@@ -32,9 +32,10 @@ export type Gift = {
   slug: string;
   title: string;
   subtitle?: string;
-  message: string;
+  message: string[];
   coverImage: string;
   theme: GiftTheme;
   tracks: Track[];
+  closingMessage?: string;
   scripture?: Scripture;
 };

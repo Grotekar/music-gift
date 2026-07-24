@@ -19,7 +19,7 @@ export function GiftPage({ gift }: { gift: Gift }) {
           />
         </div>
 
-        <div className="px-1 pb-16 pt-12 sm:px-6 sm:pt-16">
+        <div className="px-1 pb-10 pt-12 sm:px-6 sm:pt-16">
           <header>
             {gift.subtitle && (
               <p className="mb-4 text-xs font-medium tracking-[0.18em] text-[var(--accent)] uppercase">
@@ -29,9 +29,16 @@ export function GiftPage({ gift }: { gift: Gift }) {
             <h1 className="max-w-xl font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-[0.98] tracking-[-0.035em] text-[var(--ink)]">
               {gift.title}
             </h1>
-            <p className="mt-8 max-w-[38rem] text-[1.05rem] leading-8 text-[var(--body)]">
-              {gift.message}
-            </p>
+            <div className="mt-8 max-w-[38rem] space-y-5">
+              {gift.message.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[1.05rem] leading-8 text-[var(--body)]"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </header>
 
           <section className="mt-16" aria-labelledby="tracks-heading">
@@ -51,6 +58,12 @@ export function GiftPage({ gift }: { gift: Gift }) {
               ))}
             </div>
           </section>
+
+          {gift.closingMessage && (
+            <p className="mt-10 max-w-[38rem] text-[1.05rem] leading-8 text-[var(--body)]">
+              {gift.closingMessage}
+            </p>
+          )}
 
           {gift.scripture && <ScriptureQuote scripture={gift.scripture} />}
         </div>

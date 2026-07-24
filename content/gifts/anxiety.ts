@@ -4,8 +4,9 @@ export const anxietyGift: Gift = {
   slug: "anxiety",
   title: "Когда тревожно",
   subtitle: "Можно ненадолго остановиться",
-  message:
+  message: [
     "Тебе не обязательно решить всё прямо сейчас. Пусть эти несколько мелодий станут тихой паузой — местом, где можно выдохнуть и просто побыть.",
+  ],
   coverImage: "/images/anxiety-cover.svg",
   theme: "mist",
   tracks: [

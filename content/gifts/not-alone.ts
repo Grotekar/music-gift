@@ -4,8 +4,9 @@ export const notAloneGift: Gift = {
   slug: "not-alone",
   title: "Ты не один",
   subtitle: "Одна песня, которую я выбрал для тебя",
-  message:
+  message: [
     "Я вспомнил о тебе и захотел оставить здесь одну песню. Не как ответ на всё, а как тихое напоминание: даже когда слов мало, тебе не обязательно оставаться со всем этим совсем одному.",
+  ],
   coverImage: "/images/nuteki-doroga.jpg",
   theme: "mist",
   tracks: [
