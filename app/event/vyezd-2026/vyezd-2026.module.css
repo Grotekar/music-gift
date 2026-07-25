@@ -247,6 +247,21 @@
   padding-bottom: 34px;
 }
 
+.gallerySwipeHint {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 12px;
+  color: var(--camp-accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.gallerySwipeHint span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .carouselViewport {
   display: flex;
   gap: 16px;
@@ -266,7 +281,7 @@
 }
 
 .carouselSlide {
-  flex: 0 0 min(100%, 330px);
+  flex: 0 0 min(calc(100% - 42px), 330px);
   overflow: hidden;
   border-radius: 22px;
   background: var(--camp-surface);
@@ -516,6 +531,10 @@
 }
 
 @media (min-width: 768px) {
+  .gallerySwipeHint {
+    display: none;
+  }
+
   .title {
     max-width: 18ch;
     font-size: clamp(2.9rem, 4.7vw, 4.35rem);

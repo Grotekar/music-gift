@@ -96,6 +96,9 @@ export function CampGalleryCarousel({ photos }: CampGalleryCarouselProps) {
 
   return (
     <div className={styles.carouselShell}>
+      <p className={styles.gallerySwipeHint}>
+        Листай фотографии <span aria-hidden="true">→</span>
+      </p>
       <div
         aria-label="Избранные фотографии смены"
         className={styles.carouselViewport}
