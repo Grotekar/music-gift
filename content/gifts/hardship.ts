@@ -11,6 +11,7 @@ export const hardshipGift: Gift = {
   ],
   coverImage: "/images/hardship-cover.webp",
   theme: "earth",
+  tracksIntro: "Пусть эта музыка напомнит тебе, что когда рядом становится тихо, Бог начинает говорить.",
   tracks: [
     {
       mode: "full",

@@ -35,6 +35,7 @@ export type Gift = {
   message: string[];
   coverImage: string;
   theme: GiftTheme;
+  tracksIntro: string;
   tracks: Track[];
   closingMessage?: string;
   scripture?: Scripture;

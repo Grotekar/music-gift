@@ -9,6 +9,7 @@ export const anxietyGift: Gift = {
   ],
   coverImage: "/images/anxiety-cover.svg",
   theme: "mist",
+  tracksIntro: "Эта музыка напомнила мне о том, что рядом может быть тихо.",
   tracks: [
     {
       mode: "preview",

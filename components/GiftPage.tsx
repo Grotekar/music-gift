@@ -43,7 +43,7 @@ export function GiftPage({ gift }: { gift: Gift }) {
 
           <section className="mt-16" aria-labelledby="tracks-heading">
             <p className="font-serif text-lg italic text-[var(--accent)]">
-              Эта музыка напомнила мне о том, что рядом может быть тихо.
+              {gift.tracksIntro}
             </p>
             <h2 id="tracks-heading" className="sr-only">
               Музыкальный подарок

@@ -9,6 +9,7 @@ export const notAloneGift: Gift = {
   ],
   coverImage: "/images/nuteki-doroga.jpg",
   theme: "mist",
+  tracksIntro: "Эта музыка напомнила мне о том, что рядом может быть тихо.",
   tracks: [
     {
       mode: "full",
