@@ -17,21 +17,27 @@ export const hardshipGift: Gift = {
       mode: "full",
       title: "Я новый",
       artist: "Nuteki",
-      audioFull: "audio/NUTEKI_WORSHIP_-_YA_novyjj_78088024.mp3",
+      audioFull: {
+        path: "/gifts/hardship/NUTEKI_WORSHIP_-_YA_novyjj_78088024.mp3"
+      },
       description: "Иногда кажется, что всё уже потеряно, ничего не изменить. Но Бог умеет начинать заново. Пусть эта песня напомнит: твоё прошлое не определяет твоё будущее. Именно сейчас — то самое мгновение, когда ты можешь начать новую главу своей жизни с чистого листа.",
     },
     {
       mode: "full",
       title: "Псалом 26",
       artist: "Церковь Божия Music",
-      audioFull: "audio/Cerkov_Bozhiya_Music_-_Psalom_26_79540158.mp3",
+      audioFull: {
+        path: "/gifts/hardship/Cerkov_Bozhiya_Music_-_Psalom_26_79540158.mp3"
+      },
       description: "Если сегодня страшно сделать следующий шаг, помни: тебе не нужно начинать этот путь в одиночку. Бог всегда идёт рядом. Пусть эта песня станет напоминанием об этом.",
     },
     {
       mode: "full",
       title: "Свежий ветер",
       artist: "Hillsong",
-      audioFull: "audio/Hillsong_NA_RUSSKOM_YAZYKE_-_Svezhijj_veter_80263643.mp3",
+      audioFull: {
+        path: "/gifts/hardship/Hillsong_NA_RUSSKOM_YAZYKE_-_Svezhijj_veter_80263643.mp3"
+      },
       description: "Остановись на несколько минут и просто побудь в Божьем присутствии. Иногда именно в тишине Святой Дух говорит громче всего. И помни: у тебя всегда есть духовная семья — твоя церковь.",
     },
   ],

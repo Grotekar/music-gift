@@ -1,5 +1,5 @@
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { publicPath } from "@/lib/paths";
+import { getMediaUrl } from "@/lib/media";
 import type { ExternalLinks, Track } from "@/types/gift";
 
 const linkLabels: Record<keyof ExternalLinks, string> = {
@@ -9,8 +9,9 @@ const linkLabels: Record<keyof ExternalLinks, string> = {
 };
 
 export function TrackCard({ track, number }: { track: Track; number: number }) {
-  const audioPath =
+  const audioSource =
     track.mode === "preview" ? track.audioPreview : track.audioFull;
+  const audioUrl = audioSource ? getMediaUrl(audioSource.path) : undefined;
 
   return (
     <article className="border-t border-[var(--line)] py-7 first:border-t-0 first:pt-0">
@@ -34,10 +35,7 @@ export function TrackCard({ track, number }: { track: Track; number: number }) {
         </p>
       )}
 
-      <AudioPlayer
-        src={audioPath ? publicPath(audioPath) : undefined}
-        title={track.title}
-      />
+      <AudioPlayer src={audioUrl} title={track.title} />
 
       {track.externalLinks && (
         <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">

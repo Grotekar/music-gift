@@ -15,7 +15,6 @@ export const notAloneGift: Gift = {
       mode: "full",
       title: "Дорога",
       artist: "Nuteki",
-      audioFull: "audio/Nuteki_-_Doroga_47833937.mp3",
       description:
         "Я выбрал её для тех минут, когда нужные слова не находятся, а чьё-то тихое присутствие всё равно важно.",
     },

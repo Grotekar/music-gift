@@ -2,6 +2,12 @@ node_modules/
 .next/
 out/
 *.log
+*.mp3
+*.m4a
+*.aac
+*.ogg
+*.wav
+*.flac
 .env*
 !.env.example
 .DS_Store

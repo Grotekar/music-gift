@@ -6,6 +6,10 @@ export type ExternalLinks = Partial<{
   other: string;
 }>;
 
+export type AudioSource = {
+  path: string;
+};
+
 type TrackBase = {
   title: string;
   artist?: string;
@@ -16,11 +20,11 @@ type TrackBase = {
 export type Track =
   | (TrackBase & {
       mode: "preview";
-      audioPreview?: string;
+      audioPreview?: AudioSource;
     })
   | (TrackBase & {
       mode: "full";
-      audioFull?: string;
+      audioFull?: AudioSource;
     });
 
 export type Scripture = {
