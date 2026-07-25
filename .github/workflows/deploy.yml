@@ -55,6 +55,8 @@ jobs:
 
       - name: Build
         env:
+          NEXT_PUBLIC_EVENT_2026_PHOTOS_URL: ${{ vars.NEXT_PUBLIC_EVENT_2026_PHOTOS_URL }}
+          NEXT_PUBLIC_EVENT_2026_REDIRECT_URL: ${{ vars.NEXT_PUBLIC_EVENT_2026_REDIRECT_URL }}
           NEXT_PUBLIC_MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL }}
         run: npm run build
 
