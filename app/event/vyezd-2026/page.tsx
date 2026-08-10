@@ -70,6 +70,7 @@ export default function Vyezd2026Page() {
     "--camp-hero-mobile-position": eventContent.heroBackground.mobilePosition,
     "--camp-hero-position": eventContent.heroBackground.position,
   } as CSSProperties;
+  const hasFeaturedPhotos = eventContent.photos.length > 0;
   const eventVideos = eventContent.videos.map((video) => ({
     id: video.id,
     title: video.title,
@@ -113,12 +114,14 @@ export default function Vyezd2026Page() {
                 Архив фотографий будет добавлен
               </span>
             )}
-            <a
-              className={`${styles.button} ${styles.buttonGhost}`}
-              href="#gallery"
-            >
-              {eventContent.actions.gallery}
-            </a>
+            {hasFeaturedPhotos ? (
+              <a
+                className={`${styles.button} ${styles.buttonGhost}`}
+                href="#gallery"
+              >
+                {eventContent.actions.gallery}
+              </a>
+            ) : null}
           </div>
         </section>
       </header>
@@ -141,25 +144,27 @@ export default function Vyezd2026Page() {
           </div>
         </section>
 
-        <section
-          aria-labelledby="camp-gallery-title"
-          className={styles.section}
-          id="gallery"
-        >
-          <div className={styles.sectionHeader}>
-            <p className={styles.eyebrow}>
-              {eventContent.sections.gallery.eyebrow}
-            </p>
-            <h2 className={styles.sectionTitle} id="camp-gallery-title">
-              {eventContent.sections.gallery.title}
-            </h2>
-            <p className={styles.sectionText}>
-              {eventContent.sections.gallery.description}
-            </p>
-          </div>
+        {hasFeaturedPhotos ? (
+          <section
+            aria-labelledby="camp-gallery-title"
+            className={styles.section}
+            id="gallery"
+          >
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>
+                {eventContent.sections.gallery.eyebrow}
+              </p>
+              <h2 className={styles.sectionTitle} id="camp-gallery-title">
+                {eventContent.sections.gallery.title}
+              </h2>
+              <p className={styles.sectionText}>
+                {eventContent.sections.gallery.description}
+              </p>
+            </div>
 
-          <CampGalleryCarousel photos={eventContent.photos} />
-        </section>
+            <CampGalleryCarousel photos={eventContent.photos} />
+          </section>
+        ) : null}
 
         <section
           aria-labelledby="camp-video-title"

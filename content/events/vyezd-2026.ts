@@ -104,7 +104,7 @@ export const vyezd2026Content = {
     },
   },
   photos: [
-    {
+    /*{
       src: "/camp2026/photos/photo-01.svg",
       alt: "Участники выезда на вечерней программе",
       caption: "Вечерняя программа",
@@ -145,7 +145,7 @@ export const vyezd2026Content = {
       caption: "Финальный день",
       width: 1200,
       height: 1500,
-    },
+    },*/
   ],
   videos,
 } as const;
