@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { vyezd2026Content as eventContent } from "@/content/events/vyezd-2026";
+import { getEventVideoUrl } from "@/lib/event-video";
 import { publicPath } from "@/lib/paths";
 import { CampGalleryCarousel } from "./CampGalleryCarousel";
+import { EventVideoCarousel } from "./EventVideoCarousel";
 import styles from "./vyezd-2026.module.css";
 
 export const metadata: Metadata = {
@@ -65,6 +67,12 @@ export default function Vyezd2026Page() {
     "--camp-hero-mobile-position": eventContent.heroBackground.mobilePosition,
     "--camp-hero-position": eventContent.heroBackground.position,
   } as CSSProperties;
+  const eventVideos = eventContent.videos.map((video) => ({
+    id: video.id,
+    title: video.title,
+    videoUrl: getEventVideoUrl(video.videoPath),
+    posterUrl: getEventVideoUrl(video.posterPath),
+  }));
 
   return (
     <div className={styles.page} style={heroStyle}>
@@ -148,6 +156,26 @@ export default function Vyezd2026Page() {
           </div>
 
           <CampGalleryCarousel photos={eventContent.photos} />
+        </section>
+
+        <section
+          aria-labelledby="camp-video-title"
+          className={styles.section}
+          id="videos"
+        >
+          <div className={styles.sectionHeader}>
+            <p className={styles.eyebrow}>
+              {eventContent.sections.video.eyebrow}
+            </p>
+            <h2 className={styles.sectionTitle} id="camp-video-title">
+              {eventContent.sections.video.title}
+            </h2>
+            <p className={styles.sectionText}>
+              {eventContent.sections.video.description}
+            </p>
+          </div>
+
+          <EventVideoCarousel videos={eventVideos} />
         </section>
 
         <section

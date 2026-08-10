@@ -1,3 +1,49 @@
+export type EventVideo = {
+  id: string;
+  title: string;
+  videoPath?: string;
+  posterPath?: string;
+};
+
+const videos = [
+  {
+    id: "day-1",
+    title: "День 1",
+    videoPath: "/vyezd/2026/day-1.mp4",
+    posterPath: "/vyezd-2026/posters/day-1.webp",
+  },
+  {
+    id: "day-2",
+    title: "День 2",
+    videoPath: "/vyezd/2026/day-2.mp4",
+    posterPath: "/vyezd-2026/posters/day-2.webp",
+  },
+  {
+    id: "day-3",
+    title: "День 3",
+    videoPath: "/vyezd/2026/day-3.mp4",
+    posterPath: "/vyezd-2026/posters/day-3.webp",
+  },
+  {
+    id: "day-4",
+    title: "День 4",
+    videoPath: "/vyezd/2026/day-4.mp4",
+    posterPath: "/vyezd-2026/posters/day-4.webp",
+  },
+  {
+    id: "day-5",
+    title: "День 5",
+    videoPath: "/vyezd-2026/day-5.mp4",
+    posterPath: "/vyezd-2026/posters/day-5.webp",
+  },
+  {
+    id: "day-6",
+    title: "День 6",
+    videoPath: "/vyezd-2026/day-6.mp4",
+    posterPath: "/vyezd-2026/posters/day-6.webp",
+  },
+] as const satisfies readonly EventVideo[];
+
 export const vyezd2026Content = {
   slug: "vyezd-2026",
   title: "Выезд, который хочется запомнить",
@@ -36,6 +82,12 @@ export const vyezd2026Content = {
       title: "Самые тёплые кадры выезда",
       description:
         "На странице собраны избранные моменты выезда. Полный архив можно будет открыть по ссылке, когда она будет добавлена.",
+    },
+    video: {
+      eyebrow: "Видео дня",
+      title: "Видео дня",
+      description:
+        "Небольшие видео, чтобы снова вспомнить каждый день нашего выезда.",
     },
     final: {
       eyebrow: "До встречи",
@@ -89,4 +141,5 @@ export const vyezd2026Content = {
       height: 1500,
     },
   ],
+  videos,
 } as const;

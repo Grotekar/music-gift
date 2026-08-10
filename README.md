@@ -281,6 +281,36 @@ NEXT_PUBLIC_EVENT_2026_REDIRECT_URL=
 
 Первая включает кнопку внешнего фотоальбома. Вторая переводит страницу в режим переезда: основной временный контент скрывается и появляется ссылка на постоянную страницу события на церковном сайте. NFC URL при этом остаётся прежним.
 
+Блок «Видео дня» использует отдельный публичный видеобакет и не зависит от аудиобакета Music Gift. Его origin передаётся через Repository Variable:
+
+```text
+NEXT_PUBLIC_EVENT_2026_VIDEO_BASE_URL=https://video.pesnya-tebe.ru
+```
+
+Контент хранит только относительные пути. Пока переменная отсутствует, шесть карточек показывают спокойный placeholder и не создают `<video>`. Чтобы включить воспроизведение, загрузите MP4 и posters в отдельный бакет и задайте Variable. Рекомендуемый формат: MP4 с H.264 video и AAC audio, web-compatible encoding и оптимизированным размером файла.
+
+Рекомендуемая структура объектов:
+
+```text
+vyezd-2026/
+  day-1.mp4
+  day-2.mp4
+  day-3.mp4
+  day-4.mp4
+  day-5.mp4
+  day-6.mp4
+
+  posters/
+    day-1.webp
+    day-2.webp
+    day-3.webp
+    day-4.webp
+    day-5.webp
+    day-6.webp
+```
+
+Это соглашение, а не жёсткая структура приложения. Бакет должен быть публичным только на чтение, работать через HTTPS-домен `video.pesnya-tebe.ru`, разрешать `GET` и `HEAD`, корректно поддерживать HTTP Range Requests и CORS origins `https://pesnya-tebe.ru` и, при необходимости разработки, `http://localhost:3000`. S3 credentials в репозиторий и GitHub Actions не добавляются.
+
 ## Production checklist
 
 - [x] приобрести собственный домен `pesnya-tebe.ru`;
