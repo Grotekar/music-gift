@@ -34,6 +34,9 @@ const eventConfig = {
   redirectUrl: getOptionalHttpsUrl(
     process.env.NEXT_PUBLIC_EVENT_2026_REDIRECT_URL,
   ),
+  feedbackUrl: getOptionalHttpsUrl(
+    process.env.NEXT_PUBLIC_EVENT_2026_FEEDBACK_URL,
+  ),
 } as const;
 
 export default function Vyezd2026Page() {
@@ -178,6 +181,33 @@ export default function Vyezd2026Page() {
           <EventVideoCarousel videos={eventVideos} />
         </section>
 
+        {eventConfig.feedbackUrl ? (
+          <section
+            aria-labelledby="camp-feedback-title"
+            className={`${styles.section} ${styles.feedbackSection}`}
+          >
+            <div className={styles.feedbackPanel}>
+              <p className={styles.eyebrow}>
+                {eventContent.sections.feedback.eyebrow}
+              </p>
+              <h2 className={styles.feedbackTitle} id="camp-feedback-title">
+                {eventContent.sections.feedback.title}
+              </h2>
+              <p className={styles.sectionText}>
+                {eventContent.sections.feedback.text}
+              </p>
+              <a
+                className={`${styles.button} ${styles.buttonPrimary} ${styles.feedbackAction}`}
+                href={eventConfig.feedbackUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {eventContent.sections.feedback.action}
+              </a>
+            </div>
+          </section>
+        ) : null}
+
         <section
           aria-labelledby="camp-final-title"
           className={styles.finalSection}
@@ -206,10 +236,6 @@ export default function Vyezd2026Page() {
                 Ссылка на Яндекс Диск будет добавлена
               </span>
             )}
-            <div className={styles.qrPlaceholder} aria-label="Место для QR-кода">
-              <span>QR</span>
-              <small>{eventContent.sections.final.qrNote}</small>
-            </div>
           </div>
         </section>
       </main>

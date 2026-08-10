@@ -9,25 +9,25 @@ const videos = [
   {
     id: "day-1",
     title: "День 1",
-    videoPath: "/vyezd/2026/day-1.mp4",
+    videoPath: "/vyezd-2026/day-1.mp4",
     posterPath: "/vyezd-2026/posters/day-1.webp",
   },
   {
     id: "day-2",
     title: "День 2",
-    videoPath: "/vyezd/2026/day-2.mp4",
+    videoPath: "/vyezd-2026/day-2.mp4",
     posterPath: "/vyezd-2026/posters/day-2.webp",
   },
   {
     id: "day-3",
     title: "День 3",
-    videoPath: "/vyezd/2026/day-3.mp4",
+    videoPath: "/vyezd-2026/day-3.mp4",
     posterPath: "/vyezd-2026/posters/day-3.webp",
   },
   {
     id: "day-4",
     title: "День 4",
-    videoPath: "/vyezd/2026/day-4.mp4",
+    videoPath: "/vyezd-2026/day-4.mp4",
     posterPath: "/vyezd-2026/posters/day-4.webp",
   },
   {
@@ -89,12 +89,18 @@ export const vyezd2026Content = {
       description:
         "Небольшие видео, чтобы снова вспомнить каждый день нашего выезда.",
     },
+    feedback: {
+      eyebrow: "Твои впечатления",
+      title: "Расскажи, что запомнилось",
+      text:
+        "Хочется узнать, что тебе запомнилось, что можно сделать лучше и какие идеи стоит взять с собой в следующий выезд.",
+      action: "Оставить отзыв",
+    },
     final: {
       eyebrow: "До встречи",
       title: "Спасибо, что были с нами",
       text:
         "Сохраните ссылку, чтобы показать родителям, пересмотреть любимые кадры и скачать полный архив фотографий.",
-      qrNote: "Место для QR-кода",
     },
   },
   photos: [
